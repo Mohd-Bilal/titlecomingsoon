@@ -50,6 +50,7 @@ def extract_text_url(url):
     # # return str(visible_texts) 
 def removeAscii(text):
     printable = string.printable.strip(string.whitespace)
+    printable = printable+'\u00A9'
     text = [word for word in text if word not in printable]
      
     return text
