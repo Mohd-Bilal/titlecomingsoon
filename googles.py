@@ -49,9 +49,8 @@ def extract_text_url(url):
     # #     print "--"
     # # return str(visible_texts) 
 def removeAscii(text):
-    printable = string.printable.strip('\n')
-    print(printable)
-    text = [word for word in text if word not in string.printable]
+    printable = string.printable.strip(string.whitespace)
+    text = [word for word in text if word not in printable]
      
     return text
 def google_query(search_term, api_key, cse_id, npages=1, num=1):
